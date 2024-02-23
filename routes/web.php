@@ -1,6 +1,10 @@
 <?php
 
+use App\Exports\UsersExport;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function (Request $request) {
+    return redirect(route('login'));
 });
+
+require 'auth.php';
+require 'campaign-manager.php';
+require 'agent-routes.php';
+require 'admin-routes.php';

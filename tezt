@@ -1,0 +1,9 @@
+"use strict";
+(function (NioApp, $) {
+  'use strict';
+  $('.eg-toastr-with-title').on("click", function (e) {
+    e.preventDefault();
+    toastr.clear();
+    NioApp.Toast('<h5>Update Successfully</h5><p>Your profile has been successfully updated.</p>', 'success');
+  });
+})(NioApp, jQuery);
